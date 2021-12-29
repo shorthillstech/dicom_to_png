@@ -52,3 +52,8 @@ To make changes
 At line 128 on ```./dcm_img```. this is your Dicom path.
 At line 129 on ```png_folder``` this is your png path.
 
+
+## Sample Video
+
+<img src="./Docs/ezgif.com-gif-maker.gif" width="40" height="40" />
+
