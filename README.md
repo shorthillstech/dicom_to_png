@@ -55,5 +55,8 @@ At line 129 on ```png_folder``` this is your png path.
 
 ## Sample Video
 
-<img src="./Docs/ezgif.com-gif-maker.gif" width="40" height="40" />
+#### for folders
+<img src="./Docs/ezgif.com-gif-maker.gif" width="700" height="400" />
 
+#### for files
+<img src="./Docs/ezgif.com-gif-maker1.gif" width="700" height="400" />

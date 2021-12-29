@@ -125,8 +125,8 @@ def convert_folder(mri_folder, png_folder):
 
 
 if __name__ == '__main__': 
-   dicom_path = "./dcm_img" # Your DICOM file/folder path
-   png_path = "png_folder" # Your PNG file/folder path
+   dicom_path = "./dcm_img/1.2.392.200036.9125.9.0.504319101.1004220604.3210414243.001-1001" # Your DICOM file/folder path
+   png_path = "png.png" # Your PNG file/folder path
    if os.path.isdir(dicom_path):
        print(f"Working with folder' {dicom_path}")
        convert_folder(dicom_path, png_path)
