@@ -19,32 +19,36 @@ If you're looking for a Python library for DICOM networking then you might be in
 
 
 ## Installation
-```pip install pydicom```
+#### Application tested on:
 
-```pip install numpy```
+-pydicom 2.2.2
+-numpy 1.21.4
+-pypng 0.0.21
+-Pillow 2.2.1
+-gdcm 3.0.10
+-OS: Linux (Ubuntu 20.04)
 
-```pip install pypng```
 
-```pip install Pillow==2.2.1```
+## Using `virtualenv`
 
-```pip install gdcm```
+1. Make a virtual environment using virutalenv and activate it.
 
-```pip install pylibjpeg```
+```virtualenv -p python3 cartoonize```
+```source cartoonize/bin/activate```
 
-```pip install pylibjpeg-libjpeg```
+2. Install python dependencies.
 
-Also, update numpy using this command ```pip install --upgrade numpy```
+```pip install -r requirements.txt```
+
+3.To run 
+```python3 mritopng.py```
 
 
 ## Instruction
 First, set up this repository on your local machine.
 Installing all dependency in your local machine.
 
-To run 
-python3 mritopng.py
-
 To make changes
-At line 120 on ```./dcm_img```. this is your Dicom path.
-At line 121 on ```png_folder``` this is your png path.
-
+At line 128 on ```./dcm_img```. this is your Dicom path.
+At line 129 on ```png_folder``` this is your png path.
 
