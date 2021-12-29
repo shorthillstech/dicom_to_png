@@ -21,12 +21,12 @@ If you're looking for a Python library for DICOM networking then you might be in
 ## Installation
 #### Application tested on:
 
--pydicom 2.2.2
--numpy 1.21.4
--pypng 0.0.21
--Pillow 2.2.1
--gdcm 3.0.10
--OS: Linux (Ubuntu 20.04)
+- pydicom 2.2.2
+- numpy 1.21.4
+- pypng 0.0.21
+- Pillow 2.2.1
+- gdcm 3.0.10
+- OS: Linux (Ubuntu 20.04)
 
 
 ## Using `virtualenv`
