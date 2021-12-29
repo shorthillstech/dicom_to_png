@@ -15,8 +15,6 @@ DICOM is the international standard for medical images and related information. 
 
 As a pure Python package, pydicom can run anywhere Python runs without any other requirements, although if you're working with Pixel Data then we recommend you also install [NumPy](https://numpy.org/).
 
-If you're looking for a Python library for DICOM networking then you might be interested in another of our projects: pynetdicom.
-
 
 ## Installation
 #### Application tested on:
@@ -33,14 +31,16 @@ If you're looking for a Python library for DICOM networking then you might be in
 
 1. Make a virtual environment using virutalenv and activate it.
 
-```virtualenv -p python3 cartoonize```
-```source cartoonize/bin/activate```
+```virtualenv -p python3 dicom-to-png```
+
+```source dicom-to-png/bin/activate```
 
 2. Install python dependencies.
 
 ```pip install -r requirements.txt```
 
 3.To run 
+
 ```python3 mritopng.py```
 
 
@@ -50,13 +50,14 @@ Installing all dependency in your local machine.
 
 To make changes
 At line 128 on ```./dcm_img```. this is your Dicom path.
+
 At line 129 on ```png_folder``` this is your png path.
 
 
 ## Sample Video
 
-#### for folders
+### for folders
 <img src="./Docs/ezgif.com-gif-maker.gif" width="700" height="400" />
 
-#### for files
+### for files
 <img src="./Docs/ezgif.com-gif-maker1.gif" width="700" height="400" />
