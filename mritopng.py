@@ -14,12 +14,13 @@ def mri_to_png(mri_file, png_file,plt):
     """
 
     # Extracting data from the mri file
-    plan = dicom.read_file(mri_file)
-    shape = plan.pixel_array.shape
+    plan = dicom.read_file(mri_file) 
+    shape = plan.pixel_array.shape # taking pixel_array of dicom
     
     ims = plan.pixel_array
     print("Load Dicom image")
-    pa = (ims.astype(np.float)-ims.min())*255.0 / (ims.max()-ims.min())
+    pa = (ims.astype(np.float)-ims.min())*255.0 / (ims.max()-ims.min()) # for data compression image
+    # pa = ims
     print("img converting....")
     if plt: # Appling palette 
         rgb = apply_color_lut(pa,palette=plt)
@@ -28,7 +29,7 @@ def mri_to_png(mri_file, png_file,plt):
     else: # Normal palette
         image_2d = []
         max_val = 0
-        for row in  plan.pixel_array:
+        for row in  plan.pixel_array: # find the maximum value
             pixels = []
             for col in row:
                 pixels.append(col)
@@ -36,14 +37,15 @@ def mri_to_png(mri_file, png_file,plt):
             image_2d.append(pixels)
         # Rescaling grey scale between 0-255
         image_2d_scaled = []
-        for row in image_2d:
+        for row in image_2d: # for compression pixel  for normal image
             row_scaled = []
             for col in row:
                 #####
-                col_scaled = int((float(col) / float(max_val)) * 255.0)
+                col_scaled = int((float(col) / float(max_val)) * 255.0) # for data compression image into 8 bit 
+                # col_scaled = int(col)
                 row_scaled.append(col_scaled)
             image_2d_scaled.append(row_scaled)
-    # Writing the PNG file
+        # Writing the PNG file
         w = png.Writer(shape[1], shape[0], greyscale=True)
         w.write(png_file, image_2d_scaled)
     print("converting Done")
@@ -74,7 +76,7 @@ def convert_file(mri_file_path, png_file_path):
     for plt in palette_arr:
 
         plt1=plt
-        if not plt:
+        if not plt: 
             plt1="Normal"
         if len(paths)==2: 
             try:
@@ -125,13 +127,13 @@ def convert_folder(mri_folder, png_folder):
 
 
 if __name__ == '__main__': 
-   dicom_path = "./dcm_img/1.2.392.200036.9125.9.0.504319101.1004220604.3210414243.001-1001" # Your DICOM file/folder path
-   png_path = "png.png" # Your PNG file/folder path
-   if os.path.isdir(dicom_path):
+   dicom_path = "./dcm_img/" # Your DICOM file/folder path
+   png_path = "png" # Your PNG file/folder path
+   if os.path.isdir(dicom_path): # checking for folder
        print(f"Working with folder' {dicom_path}")
        convert_folder(dicom_path, png_path)
    else:
-        try:
+        try: # for handling exists folder
             os.makedirs("Dicom_Png_images")
             print("Create Folder :- Dicom_Png_images")
         except:
